@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDateTime>
+#include <cstdlib>
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent), ui(new Ui::MainWindow){
@@ -40,6 +41,11 @@ void MainWindow::putData(){
         qDebug() << "wrote";
       }
   }
+}
+
+void MainWindow::setBrowser()
+{
+    ui->textBrowser->setText(ui->lineEdit->text());
 }
 
 MainWindow::~MainWindow(){

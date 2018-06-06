@@ -20,6 +20,7 @@ public:
   void tcpConnect();
 public slots:
   void putData();
+  void setBrowser(); // Mostra números aleatórios no Browser
 private:
   Ui::MainWindow *ui;
   QTcpSocket *socket;
