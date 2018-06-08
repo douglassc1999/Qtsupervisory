@@ -16,11 +16,11 @@ class MainWindow : public QMainWindow
 public:
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
-  
-  void tcpConnect();
+  float aleatorio();
 public slots:
   void putData();
-  void setBrowser(); // Mostra números aleatórios no Browser
+  void tcpConnect();
+  void tcpDisconnect();
 private:
   Ui::MainWindow *ui;
   QTcpSocket *socket;
