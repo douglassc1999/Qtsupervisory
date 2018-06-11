@@ -107,7 +107,7 @@ void MainWindow::timerEvent(QTimerEvent *e){
 }
 
 void MainWindow::start(){
-    timer = startTimer(ui->horizontalSliderTime->value()*100);
+    timer = startTimer(ui->horizontalSliderTime->value()*10);
 
 }
 void MainWindow::stop(){
