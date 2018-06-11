@@ -35,8 +35,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QPushButton *pushButtonPut;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_8;
     QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout;
@@ -57,7 +56,7 @@ public:
     QHBoxLayout *horizontalLayout_7;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label;
-    QSlider *horizontalSlider;
+    QSlider *horizontalSliderTime;
     QLCDNumber *lcdNumber;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *pushButtonStart;
@@ -76,13 +75,10 @@ public:
         MainWindow->resize(671, 514);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        pushButtonPut = new QPushButton(centralWidget);
-        pushButtonPut->setObjectName(QStringLiteral("pushButtonPut"));
-        pushButtonPut->setGeometry(QRect(81, 317, 75, 23));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(35, 42, 541, 261));
-        horizontalLayout_8 = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(35, 42, 541, 261));
+        horizontalLayout_8 = new QHBoxLayout(layoutWidget);
         horizontalLayout_8->setSpacing(6);
         horizontalLayout_8->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
@@ -93,7 +89,7 @@ public:
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        lineEdit = new QLineEdit(widget);
+        lineEdit = new QLineEdit(layoutWidget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
 
         verticalLayout->addWidget(lineEdit);
@@ -101,12 +97,12 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        pushButtonConnect = new QPushButton(widget);
+        pushButtonConnect = new QPushButton(layoutWidget);
         pushButtonConnect->setObjectName(QStringLiteral("pushButtonConnect"));
 
         horizontalLayout->addWidget(pushButtonConnect);
 
-        pushButtonDisconnect = new QPushButton(widget);
+        pushButtonDisconnect = new QPushButton(layoutWidget);
         pushButtonDisconnect->setObjectName(QStringLiteral("pushButtonDisconnect"));
 
         horizontalLayout->addWidget(pushButtonDisconnect);
@@ -120,8 +116,9 @@ public:
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        horizontalSliderMin = new QSlider(widget);
+        horizontalSliderMin = new QSlider(layoutWidget);
         horizontalSliderMin->setObjectName(QStringLiteral("horizontalSliderMin"));
+        horizontalSliderMin->setMinimum(1);
         horizontalSliderMin->setOrientation(Qt::Horizontal);
 
         horizontalLayout_3->addWidget(horizontalSliderMin);
@@ -129,12 +126,12 @@ public:
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        labelMin = new QLabel(widget);
+        labelMin = new QLabel(layoutWidget);
         labelMin->setObjectName(QStringLiteral("labelMin"));
 
         verticalLayout_2->addWidget(labelMin);
 
-        lcdNumberMin = new QLCDNumber(widget);
+        lcdNumberMin = new QLCDNumber(layoutWidget);
         lcdNumberMin->setObjectName(QStringLiteral("lcdNumberMin"));
         lcdNumberMin->setSegmentStyle(QLCDNumber::Flat);
 
@@ -149,21 +146,24 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalSliderMax = new QSlider(widget);
+        horizontalSliderMax = new QSlider(layoutWidget);
         horizontalSliderMax->setObjectName(QStringLiteral("horizontalSliderMax"));
+        horizontalSliderMax->setMinimum(1);
         horizontalSliderMax->setOrientation(Qt::Horizontal);
+        horizontalSliderMax->setInvertedAppearance(false);
+        horizontalSliderMax->setInvertedControls(false);
 
         horizontalLayout_2->addWidget(horizontalSliderMax);
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        labelMax = new QLabel(widget);
+        labelMax = new QLabel(layoutWidget);
         labelMax->setObjectName(QStringLiteral("labelMax"));
 
         verticalLayout_3->addWidget(labelMax);
 
-        lcdNumberMax = new QLCDNumber(widget);
+        lcdNumberMax = new QLCDNumber(layoutWidget);
         lcdNumberMax->setObjectName(QStringLiteral("lcdNumberMax"));
         lcdNumberMax->setSegmentStyle(QLCDNumber::Flat);
 
@@ -181,21 +181,21 @@ public:
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QStringLiteral("label"));
 
         horizontalLayout_4->addWidget(label);
 
-        horizontalSlider = new QSlider(widget);
-        horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
-        horizontalSlider->setOrientation(Qt::Horizontal);
+        horizontalSliderTime = new QSlider(layoutWidget);
+        horizontalSliderTime->setObjectName(QStringLiteral("horizontalSliderTime"));
+        horizontalSliderTime->setOrientation(Qt::Horizontal);
 
-        horizontalLayout_4->addWidget(horizontalSlider);
+        horizontalLayout_4->addWidget(horizontalSliderTime);
 
 
         horizontalLayout_7->addLayout(horizontalLayout_4);
 
-        lcdNumber = new QLCDNumber(widget);
+        lcdNumber = new QLCDNumber(layoutWidget);
         lcdNumber->setObjectName(QStringLiteral("lcdNumber"));
         lcdNumber->setSegmentStyle(QLCDNumber::Flat);
 
@@ -207,12 +207,12 @@ public:
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        pushButtonStart = new QPushButton(widget);
+        pushButtonStart = new QPushButton(layoutWidget);
         pushButtonStart->setObjectName(QStringLiteral("pushButtonStart"));
 
         horizontalLayout_5->addWidget(pushButtonStart);
 
-        pushButtonStop = new QPushButton(widget);
+        pushButtonStop = new QPushButton(layoutWidget);
         pushButtonStop->setObjectName(QStringLiteral("pushButtonStop"));
 
         horizontalLayout_5->addWidget(pushButtonStop);
@@ -226,12 +226,12 @@ public:
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setSpacing(6);
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        textBrowser = new QTextBrowser(widget);
+        textBrowser = new QTextBrowser(layoutWidget);
         textBrowser->setObjectName(QStringLiteral("textBrowser"));
 
         horizontalLayout_6->addWidget(textBrowser);
 
-        verticalScrollBar = new QScrollBar(widget);
+        verticalScrollBar = new QScrollBar(layoutWidget);
         verticalScrollBar->setObjectName(QStringLiteral("verticalScrollBar"));
         verticalScrollBar->setOrientation(Qt::Vertical);
 
@@ -255,7 +255,7 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(horizontalSliderMin, SIGNAL(valueChanged(int)), lcdNumberMin, SLOT(display(int)));
         QObject::connect(horizontalSliderMax, SIGNAL(valueChanged(int)), lcdNumberMax, SLOT(display(int)));
-        QObject::connect(horizontalSlider, SIGNAL(valueChanged(int)), lcdNumber, SLOT(display(int)));
+        QObject::connect(horizontalSliderTime, SIGNAL(valueChanged(int)), lcdNumber, SLOT(display(int)));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -263,7 +263,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        pushButtonPut->setText(QApplication::translate("MainWindow", "putData", Q_NULLPTR));
+        lineEdit->setText(QApplication::translate("MainWindow", "127.0.0.1", Q_NULLPTR));
         pushButtonConnect->setText(QApplication::translate("MainWindow", "Connect", Q_NULLPTR));
         pushButtonDisconnect->setText(QApplication::translate("MainWindow", "Disconnect", Q_NULLPTR));
         labelMin->setText(QApplication::translate("MainWindow", "    Min", Q_NULLPTR));

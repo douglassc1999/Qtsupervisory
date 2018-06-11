@@ -9,11 +9,11 @@ MainWindow::MainWindow(QWidget *parent) :
   socket = new QTcpSocket(this);
   tcpConnect();
 
-  connect(ui->pushButtonPut,
+ /* connect(ui->pushButtonPut,
           SIGNAL(clicked(bool)),
           this,
           SLOT(putData()));
-
+*/
   connect(ui->pushButtonConnect,
           SIGNAL(clicked(bool)),
           this,
@@ -22,11 +22,24 @@ MainWindow::MainWindow(QWidget *parent) :
           SIGNAL(clicked(bool)),
           this,
           SLOT(tcpDisconnect()));
+  connect(ui->pushButtonStart,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(start()));
+  connect(ui->pushButtonStop,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(stop()));
+  connect(ui->horizontalSliderTime,
+          SIGNAL(valueChanged(int)),
+          ui->textBrowser,
+          SLOT(setTiming(int)));
 
 }
 
 void MainWindow::tcpConnect(){
-  socket->connectToHost("127.0.0.1",1234);
+  ip = ui->lineEdit->displayText();
+  socket->connectToHost(ip,1234); // 127.0.0.1
   if(socket->waitForConnected(3000)){
     qDebug() << "Connected";
     ui->textBrowser->setText("Connected\n");
@@ -47,6 +60,11 @@ void MainWindow::tcpDisconnect(){
     ui->textBrowser->setText("Disconnected\n");
   }
 }
+
+void MainWindow::setTiming(int _timing)
+{
+    timing = _timing;
+}
 void MainWindow::putData(){
   QDateTime datetime;
   QString str;
@@ -58,13 +76,11 @@ void MainWindow::putData(){
     str = "set "+ QString::number(msecdate) + " " + QString::number(aleatorio())+"\r\n";
 
       qDebug() << str;
-      ui->textBrowser->setText(str);
       qDebug() << socket->write(str.toStdString().c_str()) << " bytes written";
-      ui->textBrowser->setText(str.toStdString().c_str());
-      //ui->textBrowser->setText(" bytes written");
+      ui->textBrowser->append(str.toStdString().c_str());
+
       if(socket->waitForBytesWritten(3000)){
         qDebug() << "wrote";
-        //ui->textBrowser->setText("wrote");
       }
   }
 }
@@ -80,6 +96,20 @@ float MainWindow::aleatorio()
 
     aux3 = rand()%ui->horizontalSliderMax->value() +ui->horizontalSliderMin->value() ;
 
-
     return aux3;
+}
+
+void MainWindow::timerEvent(QTimerEvent *e){
+    putData();
+
+    qDebug() << "Timer ID:" << e->timerId();
+
+}
+
+void MainWindow::start(){
+    timer = startTimer(ui->horizontalSliderTime->value()*100);
+
+}
+void MainWindow::stop(){
+    killTimer(timer);
 }
