@@ -1,0 +1,144 @@
+\hypertarget{class_main_window}{}\section{Main\+Window Class Reference}
+\label{class_main_window}\index{Main\+Window@{Main\+Window}}
+
+
+A classe \mbox{\hyperlink{class_main_window}{Main\+Window}} é responsável pela construção da interface gráfica.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_afdfeb13ec363b0eb8ecacaf0aa13b605}{put\+Data}} ()
+\begin{DoxyCompactList}\small\item\em put\+Data é uma função que manda para o servidor dados aleatórios de acordo com a função {\itshape \mbox{\hyperlink{class_main_window_ab29e2b2ee8118c9d36c45820309a9093}{aleatorio()}}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a5edcbc314e782645cdf4db101eeb247d}{start}} ()
+\begin{DoxyCompactList}\small\item\em start inicia um temporizador que chama o produtor de dados e envia-\/os para o servidor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a939e90ddfe07d74be87b351ca2171fb0}{stop}} ()
+\begin{DoxyCompactList}\small\item\em stop é usado para chamar a função que encerra o temporizador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ac5b669957c442b6eb68573dacfce33e1}{tcp\+Connect}} ()
+\begin{DoxyCompactList}\small\item\em tcp\+Connect ao ser chamada, inicia a conexão, através do ip, com o módulo servidor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a4d22c4c7afc7ba0a2fa4c70515c85dda}{tcp\+Disconnect}} ()
+\begin{DoxyCompactList}\small\item\em tcp\+Disconnect ao ser chamada, desconecta o produtor do módulo servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}\label{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}} 
+\mbox{\hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{Main\+Window}} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window}{Main\+Window}} é o construtor da classe \mbox{\hyperlink{class_main_window}{Main\+Window}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em $\sim$\+Main\+Window é o destrutor da classe \mbox{\hyperlink{class_main_window}{Main\+Window}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_main_window_ab29e2b2ee8118c9d36c45820309a9093}{aleatorio}} ()
+\begin{DoxyCompactList}\small\item\em aleatorio serve para gerar números aleatórios. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a9d08a694a5f9c532225754381b8011ea}{timer\+Event}} (Q\+Timer\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em timer\+Event chama o produtor de dados aleatórios de acordo com um temporizador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A classe \mbox{\hyperlink{class_main_window}{Main\+Window}} é responsável pela construção da interface gráfica. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{Main\+Window@{Main\+Window}!````~Main\+Window@{$\sim$\+Main\+Window}}
+\index{````~Main\+Window@{$\sim$\+Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{$\sim$\+Main\+Window()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+$\sim$\+Main\+Window é o destrutor da classe \mbox{\hyperlink{class_main_window}{Main\+Window}}. 
+
+Definição do destrutor da classe. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_ab29e2b2ee8118c9d36c45820309a9093}\label{class_main_window_ab29e2b2ee8118c9d36c45820309a9093}} 
+\index{Main\+Window@{Main\+Window}!aleatorio@{aleatorio}}
+\index{aleatorio@{aleatorio}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{aleatorio()}{aleatorio()}}
+{\footnotesize\ttfamily float Main\+Window\+::aleatorio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+aleatorio serve para gerar números aleatórios. 
+
+Gera dados aleatórios de acordo com o valores definidos pelo usuário.
+
+\begin{DoxyReturn}{Returns}
+
+
+retorna o número aleatório. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_main_window_afdfeb13ec363b0eb8ecacaf0aa13b605}\label{class_main_window_afdfeb13ec363b0eb8ecacaf0aa13b605}} 
+\index{Main\+Window@{Main\+Window}!put\+Data@{put\+Data}}
+\index{put\+Data@{put\+Data}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{put\+Data}{putData}}
+{\footnotesize\ttfamily void Main\+Window\+::put\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+put\+Data é uma função que manda para o servidor dados aleatórios de acordo com a função {\itshape \mbox{\hyperlink{class_main_window_ab29e2b2ee8118c9d36c45820309a9093}{aleatorio()}}}. 
+
+Gera uma Q\+String a ser mandada para a caixa de texto e para o servidor. \mbox{\Hypertarget{class_main_window_a5edcbc314e782645cdf4db101eeb247d}\label{class_main_window_a5edcbc314e782645cdf4db101eeb247d}} 
+\index{Main\+Window@{Main\+Window}!start@{start}}
+\index{start@{start}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily void Main\+Window\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+start inicia um temporizador que chama o produtor de dados e envia-\/os para o servidor. 
+
+Inicia o envio de dados inicializando um temporizador interno. \mbox{\Hypertarget{class_main_window_a939e90ddfe07d74be87b351ca2171fb0}\label{class_main_window_a939e90ddfe07d74be87b351ca2171fb0}} 
+\index{Main\+Window@{Main\+Window}!stop@{stop}}
+\index{stop@{stop}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{stop}{stop}}
+{\footnotesize\ttfamily void Main\+Window\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+stop é usado para chamar a função que encerra o temporizador. 
+
+Para o temporizador interrompendo o envio de dados. \mbox{\Hypertarget{class_main_window_ac5b669957c442b6eb68573dacfce33e1}\label{class_main_window_ac5b669957c442b6eb68573dacfce33e1}} 
+\index{Main\+Window@{Main\+Window}!tcp\+Connect@{tcp\+Connect}}
+\index{tcp\+Connect@{tcp\+Connect}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{tcp\+Connect}{tcpConnect}}
+{\footnotesize\ttfamily void Main\+Window\+::tcp\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+tcp\+Connect ao ser chamada, inicia a conexão, através do ip, com o módulo servidor. 
+
+Estabelece a conexão com o servidor quando chamada. \mbox{\Hypertarget{class_main_window_a4d22c4c7afc7ba0a2fa4c70515c85dda}\label{class_main_window_a4d22c4c7afc7ba0a2fa4c70515c85dda}} 
+\index{Main\+Window@{Main\+Window}!tcp\+Disconnect@{tcp\+Disconnect}}
+\index{tcp\+Disconnect@{tcp\+Disconnect}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{tcp\+Disconnect}{tcpDisconnect}}
+{\footnotesize\ttfamily void Main\+Window\+::tcp\+Disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+tcp\+Disconnect ao ser chamada, desconecta o produtor do módulo servidor. 
+
+Desconecta o módulo do servidor assim que chamada. \mbox{\Hypertarget{class_main_window_a9d08a694a5f9c532225754381b8011ea}\label{class_main_window_a9d08a694a5f9c532225754381b8011ea}} 
+\index{Main\+Window@{Main\+Window}!timer\+Event@{timer\+Event}}
+\index{timer\+Event@{timer\+Event}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{timer\+Event()}{timerEvent()}}
+{\footnotesize\ttfamily void Main\+Window\+::timer\+Event (\begin{DoxyParamCaption}\item[{Q\+Timer\+Event $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+timer\+Event chama o produtor de dados aleatórios de acordo com um temporizador. 
+
+Controla o tempo de envio de dados para o servidor. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mainwindow.\+h\item 
+mainwindow.\+cpp\end{DoxyCompactItemize}

@@ -59,6 +59,24 @@
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QSlider" name="horizontalSliderMin">
+           <property name="minimumSize">
+            <size>
+             <width>1</width>
+             <height>1</height>
+            </size>
+           </property>
+           <property name="mouseTracking">
+            <bool>false</bool>
+           </property>
+           <property name="tabletTracking">
+            <bool>false</bool>
+           </property>
+           <property name="acceptDrops">
+            <bool>false</bool>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
            <property name="minimum">
             <number>1</number>
            </property>

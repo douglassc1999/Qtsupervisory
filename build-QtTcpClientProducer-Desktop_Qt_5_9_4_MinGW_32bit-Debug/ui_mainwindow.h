@@ -118,6 +118,11 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalSliderMin = new QSlider(layoutWidget);
         horizontalSliderMin->setObjectName(QStringLiteral("horizontalSliderMin"));
+        horizontalSliderMin->setMinimumSize(QSize(1, 1));
+        horizontalSliderMin->setMouseTracking(false);
+        horizontalSliderMin->setTabletTracking(false);
+        horizontalSliderMin->setAcceptDrops(false);
+        horizontalSliderMin->setAutoFillBackground(false);
         horizontalSliderMin->setMinimum(1);
         horizontalSliderMin->setOrientation(Qt::Horizontal);
 
