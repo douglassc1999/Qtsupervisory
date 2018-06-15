@@ -55,6 +55,7 @@ void MainWindow::getData(){
 }
 
 
+
 MainWindow::~MainWindow()
 {
   delete socket;

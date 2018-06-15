@@ -27,13 +27,13 @@
      <string>getData</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>20</y>
-      <width>571</width>
-      <height>321</height>
+      <width>591</width>
+      <height>341</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="50,50">
@@ -166,7 +166,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QWidget" name="widget" native="true"/>
+      <widget class="QWidget" name="plotter" native="true"/>
      </item>
     </layout>
    </widget>
