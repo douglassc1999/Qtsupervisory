@@ -83,16 +83,3 @@ vector<QHostAddress> DataStorage::getHostList()
   }
   return hostList;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
