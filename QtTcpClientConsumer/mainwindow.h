@@ -14,34 +14,50 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    //!Construtor da classe
+    /**
+     * @brief Construtor da classe
+     */
     explicit MainWindow(QWidget *parent = 0);
-    //!Destrutor da classe
+    /**
+     *@brief Destrutor da classe
+     */
     ~MainWindow();
 
-
-
 public slots:
-    //!Resgata os dados enviado ao servidor.
+    /**
+     * @brief getData resgata os dados enviado ao servidor.
+     */
     void getData();
-    //!Manipula os eventos de temporização.
+    /**
+     * @brief timerEvent chama getData num tempo estabelecido.
+     */
     void timerEvent(QTimerEvent *e);
-    //!Inicializa a comunicação com o servidor.
+    /**
+     * @brief tcpConnect inicializa a comunicação com o servidor.
+     */
     void tcpConnect();
-    //!Finaliza a comunicação com servidor.
+    /**
+     * @brief tcpDisconnect finaliza a comunicação com servidor.
+     */
     void tcpDisconnect();
-    //!Inicializa o processo de aquisição de dados.
+    /**
+     * @brief start inicializa o processo de aquisição de dados.
+     */
     void start();
-    //!Finaliza o processo de aquisição de dados.
+    /**
+     * @brief stop finaliza o processo de aquisição de dados.
+     */
     void stop();
-    //!Atualiza a lista de ips que produziram dados.
+    /**
+     * @brief update atualiza a lista de ips que produziram dados.
+     */
     void update();
-    //!Conecta-se ao ip clicado no listwidget
+    /**
+     * @brief updateLineEditIP conecta-se ao ip clicado no listwidget.
+     */
     void updateLineEditIP();
 
 private slots:
-    //!Trata ação de feixar o programa.
-    void on_actionQuit_triggered();
 
 private:
     Ui::MainWindow *ui;

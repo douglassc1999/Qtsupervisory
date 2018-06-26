@@ -121,7 +121,6 @@ float MainWindow::aleatorio()
         aux3 = a + qrand()%(b-a);
     }
 
-
     return aux3;
 }
 

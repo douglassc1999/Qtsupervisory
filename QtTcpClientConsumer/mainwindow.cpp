@@ -60,7 +60,7 @@ void MainWindow::tcpDisconnect()
 
 void MainWindow::start()
 {
-    timer = startTimer(ui->horizontalSliderTiming->value()*1000);
+    timer = startTimer(ui->horizontalSliderTiming->value()*100);
 }
 
 void MainWindow::stop()
@@ -165,7 +165,3 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_actionQuit_triggered()
-{
-    close();
-}
